@@ -74,7 +74,15 @@ finalScore(inning, 9) might return:
 }
 
 */ 
-
+function finalScore(theInning,num){ 
+ let game = {Home: 0, Away: 0};
+ for (let i = 0; i < num; i++) {
+   game.Home += theInning();
+   game.Away += theInning(); 
+ }
+return game;
+}
+console.log(finalScore(inning,9));
 
     
   
@@ -118,4 +126,4 @@ function getInningScore(){
   away += awayTeam;
   return `${awayTeam}-${homeTeam}`;
 };
-scoreboard(4);
+scoreboard(9);
