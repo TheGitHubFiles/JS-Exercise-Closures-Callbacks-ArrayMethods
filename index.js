@@ -109,6 +109,7 @@ function scoreboard(numberInnings) {
     console.log(`inning ${count}: ${getInningScore()}`);
   }
   console.log(`Final Score: ${away}-${home}`);
+  return;
 };
 function getInningScore(){
   let awayTeam = inning();
