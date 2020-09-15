@@ -108,22 +108,45 @@ and returns the score at each pont in the game, like so:
 9th inning: awayTeam - homeTeam
 
 Final Score: awayTeam - homeTeam */
-let home = 0;
-let away = 0;
-function scoreboard(numberInnings) {
-  let count = 0;
-  for (let i = 0; i < numberInnings; i++) {
-    count++;
-    console.log(`inning ${count}: ${getInningScore()}`);
-  }
-  console.log(`Final Score: ${away}-${home}`);
-  return;
+// let home = 0;
+// let away = 0;
+// function scoreboard(numberInnings,getinning,) {
+//   let count = 0;
+//   for (let i = 0; i < numberInnings; i++) {
+//     count++;
+//     console.log(`inning ${count}: ${getinning()}`);
+//   }
+//   console.log(`Final Score: ${away}-${home}`);
+//   return;
+// };
+// function getInningScore(){
+//   let awayTeam = inning();
+//   let homeTeam = inning();
+//   home += homeTeam;
+//   away += awayTeam;
+//   return `${awayTeam}-${homeTeam}`;
+// };
+
+// scoreboard(9,getInningScore);
+let homeTeam = 0;
+let awayTeam = 0;
+function scoreBoard1(numInnings,getinning,callback){
+    let h = 0;
+    let a = 0;
+    let count = 0;
+  for (let i = 0; i < numInnings; i++) {
+    homeTeam = callback();
+    awayTeam = callback();
+    count++
+    a += awayTeam;
+    h += homeTeam;
+    console.log(`inning ${count}: ${getinning()}`)
+  };
+console.log(`Final Score:${a}-${h}`);
 };
+
 function getInningScore(){
-  let awayTeam = inning();
-  let homeTeam = inning();
-  home += homeTeam;
-  away += awayTeam;
-  return `${awayTeam}-${homeTeam}`;
+  return`${awayTeam}-${homeTeam}`;
 };
-scoreboard(9);
+
+scoreBoard1(4,getInningScore,inning);
